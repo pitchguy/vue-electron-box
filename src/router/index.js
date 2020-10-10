@@ -13,12 +13,21 @@ const routes = [
     {
         path: '/menu',
         name: 'Menu',
-        component: () => import(/* webpackChunkName: "about" */ '../pages/menu'),
+        component: () => import(/* webpackChunkName: "about" */ '@/pages/menu'),
     },
     {
         path: '/reader',
         name: 'Reader',
-        component: () => import(/* webpackChunkName: "reader" */ '../pages/reader'),
+        component: () => import(/* webpackChunkName: "reader" */ '@/pages/reader'),
+    },
+    {
+        path: '/404',
+        name: 'tip404',
+        component: () => import(/* webpackChunkName: "tip404" */ '@/pages/error/404'),
+    },
+    {
+        path: '*',
+        redirect: '/404',
     },
 ];
 
