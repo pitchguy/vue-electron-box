@@ -17,8 +17,14 @@ const routes = [
     },
     {
         path: '/reader',
-        name: 'Reader',
-        component: () => import(/* webpackChunkName: "reader" */ '@/pages/reader'),
+        name: 'ReaderTemplate',
+        component: () => import(/* webpackChunkName: "reader" */ '@/pages/reader/template'),
+        children: [
+            {
+                path: '/',
+                component: () => import(/* webpackChunkName: "reader" */ '@/pages/reader'),
+            },
+        ],
     },
     {
         path: '/404',

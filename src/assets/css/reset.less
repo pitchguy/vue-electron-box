@@ -101,10 +101,26 @@ nav,
 section {
     display: block;
 }
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
 
 body {
+    height: 100%;
     line-height: 1;
     background-color: #f9f9f9 !important;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+a,
+a:focus,
+a:hover {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
 }
 
 ol,
@@ -128,10 +144,4 @@ q:after {
 table {
     border-collapse: collapse;
     border-spacing: 0;
-}
-
-html,
-body {
-    width: 100%;
-    height: 100%;
 }

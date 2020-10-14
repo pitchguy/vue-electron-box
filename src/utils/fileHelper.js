@@ -42,7 +42,7 @@ const ensureDirectoryExistence = () => {
 const readFileSync = filePath => {
     try {
         const data = fs.readFileSync(filePath).toString();
-        return JSON.parse(data);
+        return data;
     } catch (err) {
         throw new Error(`文件读取失败:${err}filePath: ${filePath}`);
     }
@@ -55,7 +55,7 @@ const readFilePromise = filePath => {
                 reject(err);
             } else {
                 try {
-                    resolve(JSON.parse(data.toString()));
+                    resolve(data.toString());
                 } catch (e) {
                     reject(e);
                 }

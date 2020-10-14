@@ -10,14 +10,6 @@
                 </router-link>
             </Col>
         </Row>
-        <Row :gutter="16" class-name="el-row">
-            <Col span="6" v-for="item in funcBrr" :key="item.name">
-                <div class="el-menu">
-                    <img :src="item.imgUrl" />
-                    <p>{{ item.name }}</p>
-                </div>
-            </Col>
-        </Row>
     </div>
 </template>
 
@@ -50,8 +42,6 @@ export default {
                 imgUrl: require('@/assets/images/func4.png'),
                 link: '/reader',
             },
-        ],
-        funcBrr: [
             {
                 name: '功能5',
                 class: 'el-btn',
