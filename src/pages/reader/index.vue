@@ -12,6 +12,44 @@
                 </MenuItem>
             </div>
         </Menu>
+        <div class="list-container">
+            <h4 class="name">
+                男生最爱
+                <i class="tip"></i>
+            </h4>
+            <List size="large" item-layout="vertical">
+                <ListItem v-for="book in maleList" :key="book._id" @click="goBooks(book._id)">
+                    <div @click="goBooks(book.id)">
+                        <ListItemMeta
+                            avatar="https://dev-file.iviewui.com/userinfoPDvn9gKWYihR24SpgC319vXY8qniCqj4/avatar"
+                            :title="book.title"
+                            :description="`作者：${book.author} 类型：${book.major}、${book.minor}`"
+                        />
+                        {{ book.shortIntro }}
+                        <template slot="action">
+                            <li>
+                                <Icon type="ios-star-outline" />
+                                {{ book.latelyFollower }}
+                            </li>
+                            <li>
+                                <Icon type="ios-thumbs-up-outline" />
+                                {{ book.retentionRatio + '%' }}
+                            </li>
+                            <!-- <li>
+                            <Icon type="ios-chatbubbles-outline" />
+                            345
+                        </li> -->
+                        </template>
+                        <template slot="extra">
+                            <img
+                                src="https://img.17k.com/cmsimg/recommend/2020/10/1602469911.9455.jpg"
+                                style="width: 280px"
+                            />
+                        </template>
+                    </div>
+                </ListItem>
+            </List>
+        </div>
     </div>
 </template>
 
@@ -38,13 +76,33 @@ export default {
             { name: '本地文件', icon: 'ios-folder-outline' },
         ],
         activeName: '',
+        maleList: [],
+        femaleList: [],
     }),
-    mounted() {
+    created() {
         getRank('54d42d92321052167dfb75e3', {}).then(res => {
+            console.log('=========male=========');
             console.log(res);
+            console.log('=========male=========');
+            if (res.ok) {
+                this.maleList = this._unEscape(this.$normalizeBooks(res.ranking.books.slice(0, 5)));
+            }
+        });
+        getRank('54d43437d47d13ff21cad58b', {}).then(res => {
+            console.log('=========female=========');
+            console.log(res);
+            console.log('=========female=========');
+            if (res.ok) {
+                this.femaleList = this._unEscape(
+                    this.$normalizeBooks(res.ranking.books.slice(0, 5))
+                );
+            }
         });
     },
     methods: {
+        goBooks(id) {
+            console.log(id);
+        },
         selectMenu(name) {
             let settingNames = ['设置', '本地文件'];
 
@@ -82,6 +140,13 @@ export default {
                     }
                 });
             }
+        },
+        _unEscape(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                arr[i].cover = unescape(arr[i].cover);
+                arr[i].cover = arr[i].cover.replace('/agent/', '');
+            }
+            return arr;
         },
     },
 };
