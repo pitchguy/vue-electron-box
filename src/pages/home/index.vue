@@ -19,10 +19,10 @@ export default {
     data: () => ({
         funcArr: [
             {
-                name: '功能1',
+                name: '项目创建',
                 class: 'el-btn',
                 imgUrl: require('@/assets/images/func1.png'),
-                link: '',
+                link: '/build',
             },
             {
                 name: '功能2',
@@ -37,7 +37,7 @@ export default {
                 link: '',
             },
             {
-                name: '功能4',
+                name: '电子书',
                 class: 'el-btn',
                 imgUrl: require('@/assets/images/func4.png'),
                 link: '/reader',

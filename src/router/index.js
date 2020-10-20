@@ -18,13 +18,18 @@ const routes = [
     {
         path: '/reader',
         name: 'ReaderTemplate',
-        component: () => import(/* webpackChunkName: "reader" */ '@/pages/reader/template'),
+        component: () => import(/* webpackChunkName: "readerTemplate" */ '@/pages/reader/template'),
         children: [
             {
                 path: '/',
                 component: () => import(/* webpackChunkName: "reader" */ '@/pages/reader'),
             },
         ],
+    },
+    {
+        path: '/build',
+        name: 'projectBuild',
+        component: () => import(/* webpackChunkName: "build" */ '@/pages/projectBuild'),
     },
     {
         path: '/404',
