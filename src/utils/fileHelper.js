@@ -6,6 +6,11 @@ const fileExist = filePath => {
     return fs.existsSync(filePath);
 };
 
+//打开文件目录
+const openDirSync = path => {
+    fs.opendirSync(path);
+};
+
 // 仅删除目录下的文件
 const deleteJsonFile = filePath => {
     if (fileExist(filePath)) {
@@ -27,7 +32,8 @@ const deleteDirectoryFile = () => {
         fs.rmdirSync(filePath);
     }
 };
-const ensureDirectoryExistence = () => {
+const ensureDirectoryExistence = dirPath => {
+    console.log(dirPath);
     try {
         if (!fs.existsSync(dirPath)) {
             const parentDir = path.dirname(dirPath);
@@ -70,7 +76,7 @@ const readFileCall = (filePath, callBack) => {
         if (err) {
             callBack(err);
         } else {
-            callBack(null, JSON.parse(data.toString()));
+            callBack(JSON.parse(data));
         }
     });
 };
@@ -292,6 +298,19 @@ const writeFile = (file, dataBuffer) => {
     });
 };
 
+const writeFileRecursive = (path, buffer) => {
+    let lastPath = path.substring(0, path.lastIndexOf('/'));
+    return new Promise((res, rej) => {
+        fs.mkdir(lastPath, { recursive: true }, err => {
+            if (err) return rej(err);
+            fs.writeFile(path, buffer, function(err) {
+                if (err) return res(err);
+                return res(null);
+            });
+        });
+    });
+};
+
 export {
     fileExist,
     ensureDirectoryExistence,
@@ -311,4 +330,6 @@ export {
     getDirListPromise,
     getDirNamePromise,
     writeFile,
+    writeFileRecursive,
+    openDirSync,
 };

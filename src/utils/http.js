@@ -1,7 +1,8 @@
 // 注：process.env.API_ROOTd的配置可以参考我的另一篇文章，关于生产测试环境配置
 
 import axios from 'axios';
-import { getStore } from './utils';
+import { Notice } from 'view-design';
+import { getStore } from './tools';
 
 // ** 暂时没用
 // 统一请求路径前缀
@@ -20,7 +21,7 @@ axios.interceptors.request.use(
         return config;
     },
     err => {
-        this.$Notice.error({
+        Notice.error({
             title: '请求超时',
         });
         return Promise.resolve(err);
@@ -34,14 +35,14 @@ axios.interceptors.response.use(
         // 根据返回的code值来做不同的处理(和后端约定)
         switch (data.code) {
             case 210:
-                this.$Notice.error({
+                Notice.error({
                     title: '接口请求错误',
                     desc: data.message,
                 });
                 break;
             // 错误
             case 500:
-                this.$Notice.error({
+                Notice.error({
                     title: '请联系管理员或后台同学',
                 });
                 break;
@@ -52,7 +53,7 @@ axios.interceptors.response.use(
     },
     err => {
         // 返回状态码不为200时候的错误处理
-        this.$Notice.error({
+        Notice.error({
             title: '连接错误，请重试',
         });
         return Promise.resolve(err);

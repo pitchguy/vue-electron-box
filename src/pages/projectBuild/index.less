@@ -1,5 +1,13 @@
+@import '../../assets/css/var.less';
+
 .build-container {
     padding: 20px;
+    .origin-projects,
+    .locale-projects {
+        font-weight: 600;
+        font-size: 25px;
+        padding-bottom: 20px;
+    }
     .ivu-row {
         .ivu-col {
             .ivu-card {
@@ -40,6 +48,29 @@
                     }
                 }
             }
+        }
+    }
+}
+
+.build-control {
+    li {
+        position: relative;
+        padding-bottom: 10px;
+        cursor: pointer;
+        &:hover {
+            color: @basic-color;
+            &:after {
+                background: @basic-color;
+            }
+        }
+        &:after {
+            content: '';
+            width: 90%;
+            position: absolute;
+            height: 1px;
+            background: #d4cbcb;
+            bottom: 8px;
+            left: 0;
         }
     }
 }

@@ -17,11 +17,11 @@ const routes = [
     },
     {
         path: '/reader',
-        name: 'ReaderTemplate',
         component: () => import(/* webpackChunkName: "readerTemplate" */ '@/pages/reader/template'),
         children: [
             {
                 path: '/',
+                name: 'reader',
                 component: () => import(/* webpackChunkName: "reader" */ '@/pages/reader'),
             },
         ],
@@ -35,6 +35,11 @@ const routes = [
         path: '/404',
         name: 'tip404',
         component: () => import(/* webpackChunkName: "tip404" */ '@/pages/error/404'),
+    },
+    {
+        path: '/test',
+        name: 'test',
+        component: () => import(/* webpackChunkName: "test" */ '@/pages/testPage'),
     },
     {
         path: '*',
