@@ -147,10 +147,14 @@ export default {
                     this.$set(this, 'localList', res.projects);
                 });
             } else {
-                const data = JSON.stringify({
-                    projects: [],
-                    remote: 'pitchguy',
-                });
+                const data = JSON.stringify(
+                    {
+                        projects: [],
+                        remote: 'pitchguy',
+                    },
+                    null,
+                    2
+                );
                 writeFileRecursive(`${homedir}/Documents/.locale.json`, data).then(res => {
                     this.$Message.info(
                         `生成本地json文件成功，地址${homedir}/Documents/.locale.json`

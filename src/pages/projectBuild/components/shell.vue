@@ -50,7 +50,7 @@ export default {
             newProject.projects.push(project);
             writeFileRecursive(
                 `${homedir}/Documents/.locale.json`,
-                JSON.stringify(newProject)
+                JSON.stringify(newProject, null, 2)
             ).then(res => {
                 this.$emit('close', 'modalVisible', false);
                 this.$emit('reset');

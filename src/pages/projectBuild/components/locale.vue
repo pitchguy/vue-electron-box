@@ -196,7 +196,7 @@ export default {
             if (fileExist(localUrl)) {
                 localeData.name = name;
                 localeData.description = des;
-                writeFileRecursive(localUrl, JSON.stringify(localeData)).then(res => {
+                writeFileRecursive(localUrl, JSON.stringify(localeData, null, 2)).then(res => {
                     this.$emit('setShell', {
                         btnLoading: false,
                         code: this.formatCode('项目创建成功'),
@@ -234,7 +234,7 @@ export default {
 
                     this.$emit('setShell', {
                         shellVisible: true,
-                        newPjData: JSON.parse(JSON.stringify(this.formItem)),
+                        newPjData: JSON.parse(JSON.stringify(this.formItem, null, 2)),
                         code: `git clone ${remoteUrl}`,
                     });
                     this.$refs['projectForm'].resetFields();
