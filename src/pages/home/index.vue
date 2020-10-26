@@ -61,7 +61,7 @@ export default {
                 link: '',
             },
             {
-                name: '功能8',
+                name: 'vip解析',
                 class: 'el-btn',
                 imgUrl: require('@/assets/images/func8.png'),
                 link: '',

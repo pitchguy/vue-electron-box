@@ -32,6 +32,11 @@ const routes = [
         component: () => import(/* webpackChunkName: "build" */ '@/pages/projectBuild'),
     },
     {
+        path: '/analyse',
+        name: 'analyse',
+        component: () => import(/* webpackChunkName: "analyse" */ '@/pages/analyse'),
+    },
+    {
         path: '/404',
         name: 'tip404',
         component: () => import(/* webpackChunkName: "tip404" */ '@/pages/error/404'),

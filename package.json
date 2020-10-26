@@ -15,6 +15,7 @@
     "@octokit/core": "^3.1.2",
     "axios": "^0.20.0",
     "copy-to-clipboard": "^3.3.1",
+    "copy-webpack-plugin": "^4.2.1",
     "core-js": "^3.6.5",
     "dayjs": "^1.9.3",
     "less": "^3.12.2",

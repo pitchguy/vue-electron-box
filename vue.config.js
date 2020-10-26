@@ -1,10 +1,13 @@
+const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
     publicPath: '/',
     lintOnSave: false,
     devServer: {
         overlay: {
-            warnings: true,
-            errors: true,
+            warnings: false,
+            error: false,
         },
         proxy: {
             '/api': {
@@ -37,5 +40,15 @@ module.exports = {
             nodeIntegration: true,
             preload: 'src/preload.js',
         },
+    },
+    configureWebpack: {
+        plugins: [
+            new CopyWebpackPlugin([
+                {
+                    from: './static', // 新增可以被index.html访问的静态文件目录,支持多个
+                    to: './static',
+                },
+            ]),
+        ],
     },
 };
