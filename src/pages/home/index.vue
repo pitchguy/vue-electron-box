@@ -1,15 +1,17 @@
 <template>
-    <div class="home">
-        <Row :gutter="16" class-name="el-row">
-            <Col span="6" v-for="item in funcArr" :key="item.name">
-                <router-link :to="item.link">
-                    <div class="el-menu">
-                        <img :src="item.imgUrl" />
-                        <p>{{ item.name }}</p>
-                    </div>
-                </router-link>
-            </Col>
-        </Row>
+    <div class="home-container">
+        <div class="home">
+            <Row :gutter="16" class-name="el-row">
+                <Col span="6" v-for="item in funcArr" :key="item.name">
+                    <router-link :to="item.link">
+                        <div class="el-menu">
+                            <img :src="item.imgUrl" />
+                            <p>{{ item.name }}</p>
+                        </div>
+                    </router-link>
+                </Col>
+            </Row>
+        </div>
     </div>
 </template>
 
