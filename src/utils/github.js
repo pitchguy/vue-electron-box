@@ -11,7 +11,7 @@ const wholeSpin = word => {
         render: h => {
             return h('div', [
                 h('Icon', {
-                    class: 'demo-spin-icon-load',
+                    class: 'animate-spin-icon-load',
                     props: {
                         type: 'ios-loading',
                         size: 18,
