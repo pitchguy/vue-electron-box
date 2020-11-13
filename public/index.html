@@ -7,8 +7,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="icon" href="<%= BASE_URL %>favicon.ico">
   <title><%= htmlWebpackPlugin.options.title %></title>
-  <link rel="stylesheet" type="text/css" href="./static/live2d/waifu.css">
-  <link rel="stylesheet" type="text/css" href="./static/live2d/flat-ui.min.css">
 </head>
 
 <body>
@@ -20,3 +18,34 @@
 </body>
 
 </html>
+<!-- <script src="./static/jquery-3.5.1.min.js"></script> -->
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="./static/live2dw/lib/L2Dwidget.min.js"></script>
+<script src="./static/suspension.js"></script>
+<script type="text/javascript">
+  var arr = ['shizuku', 'hibiki', 'izumi', 'z16', 'koharu'];
+  var index = Math.floor((Math.random() * arr.length));
+
+  // var name = arr[index];
+  var name = 'shizuku';
+
+  L2Dwidget.init({
+    pluginRootPath: "./static/live2dw/",
+    pluginJsPath: "lib/",
+    pluginModelPath: "live2d-widget-model-" + name + "/assets/",
+    tagMode: false,
+    debug: false,
+    model: {
+      jsonPath: "./static/live2dw/live2d-widget-model-" + name + "/assets/" + name + ".model.json"
+    },
+    display: {
+      position: "right",
+      width: 200,
+      height: 400
+    },
+    mobile: {
+      show: true
+    },
+    log: false
+  })
+</script>
