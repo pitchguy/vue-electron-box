@@ -78,7 +78,7 @@
             @reset="resetShell"
         />
         <BackTop />
-        <return-btn name="返回上一页" url="/" />
+        <return-btn name="返回上一页" />
     </div>
 </template>
 

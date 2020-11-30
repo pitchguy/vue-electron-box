@@ -1,13 +1,6 @@
 <template>
     <div class="el-affix" :style="{ styled }">
-        <Button
-            size="large"
-            icon="md-arrow-back"
-            type="primary"
-            shape="circle"
-            class=""
-            @click="returnPage"
-        >
+        <Button size="large" icon="md-arrow-back" type="primary" shape="circle" @click="returnPage">
             {{ name }}
         </Button>
     </div>

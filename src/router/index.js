@@ -27,14 +27,19 @@ const routes = [
         ],
     },
     {
-        path: '/build',
+        path: '/build', //项目创建
         name: 'projectBuild',
         component: () => import(/* webpackChunkName: "build" */ '@/pages/projectBuild'),
     },
     {
-        path: '/analyse',
+        path: '/analyse', //vip视频解析
         name: 'analyse',
         component: () => import(/* webpackChunkName: "analyse" */ '@/pages/analyse'),
+    },
+    {
+        path: '/vipMusic', //vip音乐解析
+        name: 'vipMusic',
+        component: () => import(/* webpackChunkName: "vipMusic" */ '@/pages/vipMusic'),
     },
     {
         path: '/404',
