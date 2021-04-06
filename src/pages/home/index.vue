@@ -57,7 +57,7 @@ export default {
                 link: '',
             },
             {
-                name: 'vip音乐解析',
+                name: '功能7',
                 class: 'el-btn',
                 imgUrl: require('@/assets/images/func7.png'),
                 link: '/vipMusic',

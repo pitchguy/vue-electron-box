@@ -2,6 +2,7 @@
     <div class="anayse-container">
         <div class="analyse-title">VIP视频解析</div>
         <div class="analyse-top-container">
+            <Switch ></Switch>
             <Select v-model="vipPortData" size="large" class="select-style">
                 <Option v-for="item in vipPortList" :value="item.value" :key="item.value">
                     {{ item.label }}
