@@ -1,8 +1,9 @@
 {
   "name": "electron-vue",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
+    "start": "npm run electron:serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "electron:build": "vue-cli-service electron:build",
@@ -12,8 +13,18 @@
   },
   "main": "background.js",
   "dependencies": {
+    "@octokit/core": "^3.1.2",
+    "axios": "^0.20.0",
+    "copy-to-clipboard": "^3.3.1",
+    "copy-webpack-plugin": "^4.2.1",
     "core-js": "^3.6.5",
+    "dayjs": "^1.9.3",
+    "image-conversion": "^2.1.1",
+    "less": "^3.12.2",
+    "less-loader": "^7.0.2",
+    "view-design": "^4.4.0-rc.1",
     "vue": "^2.6.11",
+    "vue-codemirror": "^4.0.6",
     "vue-router": "^3.2.0"
   },
   "devDependencies": {

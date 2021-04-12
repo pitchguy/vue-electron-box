@@ -1,0 +1,83 @@
+.home-container {
+    width: 100%;
+    height: 100%;
+    background: #f9f9f9 url('../../assets//images/bg/bg2.jpg') center center no-repeat;
+    background-size: 100% 100%;
+    .home {
+        width: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .ivu-row {
+            margin: 0 !important;
+        }
+        .el-row {
+            padding-bottom: 50px;
+            .ivu-col {
+                min-width: 190px;
+            }
+        }
+        .el-menu {
+            position: relative;
+            margin: 10px 5px;
+            padding-top: 20px;
+            padding-bottom: 30px;
+            background: #fff;
+            transition: all 0.4s ease;
+            backface-visibility: hidden;
+            color: #000;
+            opacity: 0.8;
+            cursor: pointer;
+            &:before {
+                position: absolute;
+                top: 100%;
+                left: 5%;
+                z-index: -1;
+                width: 90%;
+                height: 10px;
+                background: radial-gradient(
+                    ellipse at center,
+                    rgba(0, 0, 0, 0.35) 0,
+                    transparent 80%
+                );
+                content: '';
+                opacity: 0;
+                transition-duration: 0.3s;
+                transition-property: transform, opacity;
+                pointer-events: none;
+            }
+            &:hover {
+                color: #fff;
+                background: #363f48;
+                transform: translateY(-5px);
+                &:before {
+                    opacity: 1;
+                    transform: translateY(5px);
+                }
+                img {
+                    transform: rotate(10deg);
+                }
+            }
+            p {
+                text-align: center;
+                padding: 20px 0 0 0;
+            }
+            img {
+                width: 75pt;
+                height: 75pt;
+                display: block;
+                margin: 0 auto 10px;
+                transition: all 0.4s ease;
+                transform: translateZ(0);
+                backface-visibility: hidden;
+            }
+        }
+        .el-btn {
+            min-width: 80%;
+            height: 100px;
+            padding-top: 20px;
+            padding-bottom: 30px;
+        }
+    }
+}
