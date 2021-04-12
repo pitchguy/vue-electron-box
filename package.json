@@ -1,8 +1,9 @@
 {
   "name": "electron-vue",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
+    "start": "npm run serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "electron:build": "vue-cli-service electron:build",
