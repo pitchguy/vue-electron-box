@@ -1,21 +1,15 @@
 <template>
-    <div class="vip-music-container">
-        <return-btn name="返回上一页" />
-    </div>
+  <div class="vip-music-container"></div>
 </template>
 
 <script>
-import ReturnBtn from '@/components/returnBtn';
-
 export default {
-    name: 'vipMusic',
-    components: {
-        ReturnBtn,
-    },
-    data: () => ({
-        aa: '',
-    }),
-    methods: {},
+  name: 'vipMusic',
+  components: {},
+  data: () => ({
+    aa: '',
+  }),
+  methods: {},
 };
 </script>
 
