@@ -1,6 +1,18 @@
-# electron-vue
+# vue-electron-box
 
-基于 vue-cli3 和 electron-build 搭建的桌面应用模版，UI 框架使用了 iview 最新版本，本意是熟悉一下 node 和 electron 的 api，目前各种功能持续开发中...
+## 项目介绍
+
+基于 vue2+electron 做了一个桌面应用，里面包含了一些平常工作中遇到、想到的有意思的小功能，不定期 code...
+
+### 项目依赖
+
+- [electron](#elelctron)
+- [vue](#vue)
+
+### 项目安装启动
+
+基于 vue-cli3 和 electron-build 搭建的桌面应用模版，UI 框架使用了 iview 最新版本，本意是熟悉一下 node 和 electron 的
+api，目前各种功能持续开发中...
 
 ### node 版本要求
 
@@ -18,14 +30,14 @@ yarn
 electron:serve
 ```
 
--   √ Vue-cli3
--   [√ 配置多环境变量](#env)
--   [√ 开发环境去除 ESLint](#ESLint)
--   [√ electron 开发环境配置](#electron)
--   [√ iview 全局引入(可按需)](#iview)
--   [√ Less 全局样式](#Less)
--   [√ 配置 proxy 跨域](#proxy)
--   [√ 静态 static 文件设置](#CopyWebpackPlugin)
+- √ Vue-cli3
+- [√ 配置多环境变量](#env)
+- [√ 开发环境去除 ESLint](#ESLint)
+- [√ electron 开发环境配置](#electron)
+- [√ iview 全局引入(可按需)](#iview)
+- [√ Less 全局样式](#Less)
+- [√ 配置 proxy 跨域](#proxy)
+- [√ 静态 static 文件设置](#CopyWebpackPlugin)
 
 ### 项目打包
 
